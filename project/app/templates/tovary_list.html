@@ -1,11 +1,25 @@
 {% extends 'index.html' %}
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
 {% block content %}
-<a href="{% url 'create' %}">Create</a>
-<ul>
+<header class="header">
+    <button class="header__create-btn"><a href="{% url 'create' %}">Создать</a></button>
+    <button class="header__zakaz-btn"><a href="{% url 'create' %}">Заказать</a></button>
+</header>
+
+<div class="container">
 {% for tovar in tovars %}
-    <li> {{ tovar.title }} <a href="{% url 'delete' tovar.pk %}">Delete</a>
-        <a href="{% url 'update' tovar.pk %}">Update</a>
-        <a href="{% url 'detail' tovar.pk %}">About</a></li>
+    <div class="container__tovar-card">
+        {{ tovar.title }}
+        <button class="container__tovar_about-btn">
+            <a href="{% url 'detail' tovar.pk %}">
+                Подробнее
+            </a>
+        </button>
+    </div>
+    
 {% endfor %}
-</ul>
+
 {% endblock %}

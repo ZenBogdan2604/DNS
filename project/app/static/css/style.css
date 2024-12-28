@@ -1,0 +1,96 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: rgb(144, 185, 196);
+}
+
+.header {
+    background-color: rgb(219, 219, 219);
+
+    height: 3vh;
+    width: 70vw;
+
+    display: flex;
+    justify-content: center;
+    
+    margin: 0 auto;
+    padding: 15px;
+
+    border: 3px white solid;
+    border-radius: 0px 0px 10px 10px;
+
+    gap: 60px;
+    margin-bottom: 10vw;
+}
+
+.container {
+    background-color: rgba(62, 62, 62, 0.742);
+
+    width: 70%;
+
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    margin: 0 auto;
+    padding: 15px;
+}
+
+.container__tovar-card {
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    border: 3px white solid;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+    width: 33%;
+}
+
+.container__tovar_about-btn {
+    background-color: rgb(255, 170, 0);
+    padding: 5px;
+    margin: 15px 0px 0px;
+    border: 2px white solid;
+    border-radius: 5px;
+    width: 20vw;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.container__tovar_about-btn a:active {
+    color: inherit; /* Убираем цвет при наведении и переходе */
+  }
+
+a {
+    margin-top: 10px;
+}
+
+.header__create-btn {
+    padding: 10px;
+    background-color: green;
+    border: 3px white solid;
+    border-radius: 5px;
+    align-items: center;
+}
+
+.header__create-btn a{
+    color: black;
+}
+
+.header__zakaz-btn {
+    background-color: orange;
+    padding: 10px;
+    border: 3px white solid;
+    border-radius: 5px;
+}

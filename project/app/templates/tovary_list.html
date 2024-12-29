@@ -1,6 +1,12 @@
 {% extends 'index.html' %}
 {% block content %}
 <a href="{% url 'create' %}">Create</a>
+
+<form method="get" action="{% url 'tovary' %}">
+    <input type="text" name="search" placeholder="Поиск по названию" value="{{ request.GET.search }}">
+    <button type="submit">Найти</button>
+</form>
+
 <ul>
 {% for tovar in tovars %}
     <li> {{ tovar.title }} <a href="{% url 'delete' tovar.pk %}">Delete</a>

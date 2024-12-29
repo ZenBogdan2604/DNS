@@ -1,13 +1,20 @@
-from .models import *
 from django.views.generic.list import ListView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
 from django.views.generic.detail import DetailView
+from .models import Tovar
 
 class TovaryListView(ListView):
     model = Tovar
     template_name = 'tovary_list.html'
     context_object_name = 'tovars'
+
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        search_query = self.request.GET.get('search')
+        if search_query:
+            queryset = queryset.filter(title__icontains=search_query)
+        return queryset
 
 class TovaryCreateView(CreateView):
     model = Tovar
@@ -30,12 +37,3 @@ class TovaryDetailView(DetailView):
     model = Tovar
     template_name = 'details.html'
     context_object_name = 'tovars'
-
-
-
-
-
-
-
-
-## Все товары, отдельная страница товара, Создание товара и его обновление, удаление товара

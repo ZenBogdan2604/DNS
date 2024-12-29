@@ -36,7 +36,7 @@ class TovaryUpdateView(UpdateView):
 class TovaryDetailView(DetailView):
     model = Tovar
     template_name = 'details.html'
-    context_object_name = 'tovars'
+    context_object_name = 'tovar'
 
 
 

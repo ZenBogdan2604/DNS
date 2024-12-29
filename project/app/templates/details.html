@@ -1,5 +1,7 @@
 {% extends 'index.html' %}
 {% block content %}
-    {{tovary}}
-<a href="{% url 'tovary' %}"></a>
+    {{tovar.title}}
+    {{tovar.descpription}}
+    {{tovar.price}}
+<a href="{% url 'tovary' %}">Назад</a>
 {% endblock %}

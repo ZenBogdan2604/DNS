@@ -1,6 +1,7 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box; /* Apply box-sizing globally */
 }
 
 body {
@@ -8,89 +9,135 @@ body {
     justify-content: center;
     flex-direction: column;
     background-color: rgb(144, 185, 196);
+    font-family: sans-serif; /* Add a default font */
 }
 
 .header {
-    background-color: rgb(219, 219, 219);
-
-    height: 3vh;
-    width: 70vw;
-
     display: flex;
-    justify-content: center;
-    
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #f0f0f0;
+    width: 70%;
     margin: 0 auto;
-    padding: 15px;
+    border: 3px solid white;
+    border-radius: 0 0 10px 10px;
+    margin-bottom: 40px;
+}
 
-    border: 3px white solid;
-    border-radius: 0px 0px 10px 10px;
+.header a {
+    text-decoration: none;
+}
 
-    gap: 60px;
-    margin-bottom: 10vw;
+.header button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+
+/* Search Form Styles */
+.search-form {
+    width: 50%;
+    margin: 10px auto;
+    display: flex;
+    border: 3px solid white;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-bottom: 40px;
+}
+
+.search-field {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 0;
+    font-size: 16px; /* Consistent font size */
+}
+
+.search-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 0 5px 5px 0;
+    font-size: 16px; /* Consistent font size */
+}
+
+.search-button:hover {
+    background-color: #3e8e41;
 }
 
 .container {
     background-color: rgba(62, 62, 62, 0.742);
-
     width: 70%;
-
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-
-    margin: 0 auto;
-    padding: 15px;
+    display: grid; /* Use only grid for layout */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+    justify-content: center; /* Center the grid within the container */
+    align-content: center; /* Center the grid vertically */ /* OR use place-items: center; */
+    gap: 20px;
+    padding: 40px;
+    border: 3px solid white;
+    border-radius: 10px;
+    margin: 0 auto; /* Ensure container is centered */
 }
 
 .container__tovar-card {
-    background-color: black;
+    background-color: #333;
     color: white;
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-items: center;
-    border: 3px white solid;
+    width: 276px;
+    margin: 0;
+    padding: 20px;
     border-radius: 10px;
-    padding: 10px;
-    margin: 10px;
-    width: 33%;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.2s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
+
+.container__tovar-card img { /* Style images within cards */
+    max-width: 100%;
+    height: auto;
+    display: block; /* Prevent image from creating extra space */
+    margin-bottom: 10px; /* Space below the image */
+    
+}
+
+.container__tovar-card:hover {
+    transform: scale(1.05);
+}
+
+.container__tovar-card h2 {
+    margin-bottom: 20px;
+}
+
 
 .container__tovar_about-btn {
     background-color: rgb(255, 170, 0);
-    padding: 5px;
-    margin: 15px 0px 0px;
-    border: 2px white solid;
+    padding: 10px 15px;
+    margin-top: auto; /* Push button to bottom */
+    border: none;
     border-radius: 5px;
-    width: 20vw;
     text-decoration: none;
     cursor: pointer;
+    text-align: center;
+    display: block; /* Occupy full width */
+    transition: background-color 0.3s ease;
+    font-size: 16px; /* Consistent font size */
+    align-self: center; /* center the button */
+
+
 }
 
-.container__tovar_about-btn a:active {
-    color: inherit; /* Убираем цвет при наведении и переходе */
-  }
-
-a {
-    margin-top: 10px;
-}
-
-.header__create-btn {
-    padding: 10px;
-    background-color: green;
-    border: 3px white solid;
-    border-radius: 5px;
-    align-items: center;
-}
-
-.header__create-btn a{
-    color: black;
-}
-
-.header__zakaz-btn {
-    background-color: orange;
-    padding: 10px;
-    border: 3px white solid;
-    border-radius: 5px;
+.container__tovar_about-btn:hover {
+    background-color: #ffc940;
 }

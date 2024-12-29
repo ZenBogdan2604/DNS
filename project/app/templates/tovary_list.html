@@ -4,26 +4,30 @@
 <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
 {% block content %}
-<header class="header">
-    <button class="header__create-btn"><a href="{% url 'create' %}">Создать</a></button>
-    <button class="header__zakaz-btn"><a href="{% url 'create' %}">Заказать</a></button>
-</header>
 
-<div class="container">
-    <form method="get" action="{% url 'tovary' %}">
-        <input type="text" name="search" placeholder="Поиск по названию" value="{{ request.GET.search }}">
+    <header class="header">
+        <a href="{% url 'create' %}"><button class="header__create-btn">Создать</button></a>
+        <a href="{% url 'create' %}"><button class="header__zakaz-btn">Заказать</button></a>
+    </header>
+
+    <form method="get" action="{% url 'tovary' %}" class="search-form">
+        <input type="text" class="search-field" name="search" placeholder="Поиск по названию" value="{{ request.GET.search }}">
         <button type="submit">Найти</button>
     </form>
-{% for tovar in tovars %}
-    <div class="container__tovar-card">
-        {{ tovar.title }}
-        <button class="container__tovar_about-btn">
-            <a href="{% url 'detail' tovar.pk %}">
-                Подробнее
-            </a>
-        </button>
+
+    <div class="container">
+
+        {% for tovar in tovars %}
+
+            <div class="container__tovar-card">
+                <h2>{{ tovar.title }}</h2>
+                <a href="{% url 'detail' tovar.pk %}">
+                    <button class="container__tovar_about-btn">Подробнее</button>
+                </a>
+            </div>
+
+        {% endfor %}
+
     </div>
-    
-{% endfor %}
 
 {% endblock %}

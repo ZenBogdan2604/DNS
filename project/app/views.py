@@ -24,7 +24,7 @@ class TovaryCreateView(CreateView):
 
 class TovaryDeleteView(DeleteView):
     model = Tovar
-    template_name = 'details.html'
+    template_name = 'confirm_delete.html'
     success_url = reverse_lazy('tovary')
 
 class TovaryUpdateView(UpdateView):

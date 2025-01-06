@@ -1,0 +1,10 @@
+{% extends 'index.html' %}
+
+{% block content %}
+<form method="post">
+    {% csrf_token %}
+    Точно хотите это удалить?
+    <button type="submit">Delete</button>
+    <a href="{% url 'tovary' %}">Назад</a>
+</form>
+{% endblock %}

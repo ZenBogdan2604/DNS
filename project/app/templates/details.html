@@ -4,4 +4,7 @@
     {{tovar.descpription}}
     {{tovar.price}}
 <a href="{% url 'tovary' %}">Назад</a>
+<a href="{% url 'update' tovar.pk %}">Обновить</a>
+<a href="{% url 'delete' tovar.pk %}">Удалить</a>
+
 {% endblock %}
